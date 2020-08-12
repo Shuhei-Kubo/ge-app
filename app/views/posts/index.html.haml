@@ -1,13 +1,4 @@
-.header
-  .left__part
-    .logomark_app
-    .logo__title GUNJIN ENGLSIH
-  .right__part
-    .home-header__search-box
-      = form_with local: true  do |form|
-        = form.text_field placeholder: "キーワードから探す", class: "searchbox-input"
-        %button{type: "submit", class: "wordsearch__btn"}
-    .user_management_btn ログイン
+= render partial: "layouts/header"
   
 .mainscreen
     
