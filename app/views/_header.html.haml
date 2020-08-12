@@ -1,0 +1,6 @@
+.header
+  .logomark_app
+  .home-header__search-box
+        = form_with local: true  do |form|
+          = form.text_field placeholder: "キーワードから探す", class: "searchbox-input"
+  

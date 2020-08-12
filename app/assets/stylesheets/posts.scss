@@ -1,0 +1,50 @@
+
+* {
+  box-sizing: border-box;
+}
+
+.header{
+  height: 100px;
+  background-color: #ffff00c9;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  
+  
+  .left__part{
+    display: flex;
+
+
+    .logomark_app{
+      height: 100px;
+      width: 100px;
+      background-color: black;
+    }
+  }
+  
+  .right__part{
+    display: flex;
+    
+    input{
+      height: 30px;
+      width: 300px;
+
+    }
+
+    .wordsearch__btn{
+      height: 30px;
+      width: 30px;
+    
+    }
+
+  
+
+    .user_management_btn{
+      height: 30px;
+      width: 100px;
+      border: solid 1px black;
+      text-align: center;
+      padding: 5px;
+    }
+  }
+}
