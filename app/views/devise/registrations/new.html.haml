@@ -8,9 +8,19 @@
       = devise_error_messages!
       .FormField
         .FormField__label--normal
-          = f.label :name
+          = f.label :nickname
         .FormField__input--normal
-          = f.text_field :name, autofocus: true
+          = f.text_field :nickname, autofocus: true
+      .FormField
+        .FormField__label--normal
+          = f.label :last_name_kanji
+        .FormField__input--normal
+          = f.text_field :last_name_kanji, autofocus: true
+      .FormField
+        .FormField__label--normal
+          = f.label :first_name_kanji
+        .FormField__input--normal
+          = f.text_field :first_name_kanji, autofocus: true
       .FormField
         .FormField__label--normal
           = f.label :email

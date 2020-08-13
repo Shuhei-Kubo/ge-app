@@ -13,8 +13,6 @@
     margin: 0 auto;
 
   
-  
-  
     .left__part{
       display: flex;
       justify-content: space-around;
@@ -52,17 +50,10 @@
         width: 300px;
       }
 
-      .wordsearch__btn{
-        height: 30px;
-        width: 30px;
-      }
-    
-      .home_btn{
-        height: 50px;
-        width: 50px;
-      }
       .home_btn{
         background-color: black;
+        height: 50px;
+        width: 50px;
       }
   }
  }
