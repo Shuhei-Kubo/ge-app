@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.all
+   
   end
 
   def new
@@ -9,16 +10,15 @@ class PostsController < ApplicationController
   end
 
   def create
-    binding.pry
-    @post = Post.create(post_params)
-    if @post.save
+     post = Post.create(post_params)
+     if post.save
       redirect_to root_path
-    end
+     end
     
   end
 
   private
   def post_params
-    params.require(:post).permit(:title, :text, :image)
+    params.require(:post).permit(:title, :text, :image).merge(user_id: current_user.id)
   end
 end

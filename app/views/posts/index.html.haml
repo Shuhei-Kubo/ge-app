@@ -6,14 +6,15 @@
       .user_profile_image
         = image_tag asset_path("A5275E9C-B6EC-4620-B46E-7AA77B5C465A.jpeg"), size: "40x40", class: "ge_logo" 
       .user_nickname
-        post.user_id
+        = current_user.nickname
       .post_title_box 
         .post_title_name
-          セットの注文
+          = post.title
     .post__content
       .post__content--pic
         = image_tag asset_path("mcdonald.jpeg"), size: "718x349"
       .post__content--textbox
-        .user_nickname Andy
+        .user_nickname
+          = current_user.nickname
         .post__content--text
-          マクドナルドでセットの注文をしたのですが、英語でセットは「set」で合っていますか？なにかアドバイスありましたらお願いします！
+          = post.text
