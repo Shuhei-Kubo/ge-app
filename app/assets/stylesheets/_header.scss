@@ -1,5 +1,6 @@
 
 
+
 .header{
   height: 100px;
   background-color: #ffff00c9;
@@ -12,8 +13,6 @@
     align-items: flex-end;
     margin: 0 auto;
 
-  
-  
   
     .left__part{
       display: flex;
@@ -52,17 +51,10 @@
         width: 300px;
       }
 
-      .wordsearch__btn{
-        height: 30px;
-        width: 30px;
-      }
-    
-      .home_btn{
-        height: 50px;
-        width: 50px;
-      }
       .home_btn{
         background-color: black;
+        height: 50px;
+        width: 50px;
       }
   }
  }
