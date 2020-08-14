@@ -1,14 +1,19 @@
 = render partial: "layouts/header"
   
-.post_mainscreen
-  .post_header
-    .user_profile_image
-      = image_tag asset_path("A5275E9C-B6EC-4620-B46E-7AA77B5C465A.jpeg"), size: "40x40", class: "ge_logo" 
-    .user_nickname Andy
-  .post__content
-    .user_nickname Andy
-    .post__content--text
-  .post__content--pic
-    
-  
-  
+- @posts.each do |post|
+  .post_mainscreen
+    .post_header
+      .user_profile_image
+        = image_tag asset_path("A5275E9C-B6EC-4620-B46E-7AA77B5C465A.jpeg"), size: "40x40", class: "ge_logo" 
+      .user_nickname
+        post.user_id
+      .post_title_box 
+        .post_title_name
+          セットの注文
+    .post__content
+      .post__content--pic
+        = image_tag asset_path("mcdonald.jpeg"), size: "718x349"
+      .post__content--textbox
+        .user_nickname Andy
+        .post__content--text
+          マクドナルドでセットの注文をしたのですが、英語でセットは「set」で合っていますか？なにかアドバイスありましたらお願いします！

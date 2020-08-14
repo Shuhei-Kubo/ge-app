@@ -1,0 +1,15 @@
+.form_newpost
+  = form_with model: @post do |form|
+    .form-title-box
+      = form.label :タイトルを入力してください!
+      = form.text_field :title, class: "title-input-form" 
+    .form-text-box
+      = form.label :気になることを質問しよう!
+      = form.text_area :text, rows: "10", class: "text-content"
+      = form.label :image, class: 'Form__inputImage' do
+        = icon('far', 'image', class: 'Form__icon')
+        = form.file_field :image, class: 'Hidden'
+    .form-send-btn
+      = form.submit "投稿する", class: "newpost_submitbtn"
+
+
