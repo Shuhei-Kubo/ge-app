@@ -12,7 +12,7 @@
           = post.title
     .post__content
       .post__content--pic
-        = image_tag asset_path("mcdonald.jpeg"), size: "718x349"
+        = image_tag post.image.to_s
       .post__content--textbox
         .user_nickname
           = current_user.nickname
