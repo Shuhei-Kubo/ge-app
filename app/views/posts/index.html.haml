@@ -11,10 +11,18 @@
         .post_title_name
           = post.title
     .post__content
-      .post__content--pic
-        = image_tag post.image.to_s
-      .post__content--textbox
-        .user_nickname
-          = current_user.nickname
-        .post__content--text
-          = post.text
+      - if post.image.present?
+        .post__content--pic
+          = image_tag post.image.to_s
+        .post__content--textbox
+          .user_nickname
+            = current_user.nickname
+          .post__content--text
+            = post.text
+      - else
+        .post__content--textbox
+          .user_nickname
+            = current_user.nickname
+          .post__content--text
+            = post.text
+        
