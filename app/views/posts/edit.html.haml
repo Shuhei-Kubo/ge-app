@@ -1,5 +1,6 @@
+
 .function-row
-  %h2 投稿する
+  %h2 編集する 
 .form_newpost
   = form_with model: @post do |form|
     .form-title-box
@@ -12,6 +13,4 @@
         = icon('far', 'image', class: 'Form__icon')
         = form.file_field :image, class: 'Hidden'
     .form-send-btn
-      = form.submit "投稿する", class: "newpost_submitbtn"
-
-
+      = form.submit "編集する", class: "newpost_submitbtn"

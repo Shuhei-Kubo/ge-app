@@ -19,6 +19,7 @@
     border: 1px solid black;
     border-bottom: 0;
     margin-top: 30px;
+    position: relative;
 
     .user_profile_image{
       height: 40px;
@@ -39,25 +40,40 @@
       font-weight: bold;
       
     }
-
-    .post_title_box {
-      display: flex;
-      justify-content: center;
-      width: 65%;
-
       .post_title_name{
         font-weight: bold;
+        position: absolute;
+        top: 15px;
+        left: 40%;
       }
-     }
-      
+     .post-controll-btn{
+       position: absolute;
+       right: 20px;
+       top: 15px;
+
+       
+
+       li{
+         display: none;
+       }
+       ul.options-post:hover li{
+        display: block;
+        background-color: #fafafafa;
+        
+
+        height: 25px;
+        width: 150px;
+         
+
+       }
+
+     }  
   }
 
   .post__content{
   border: 1px solid black;
   border-radius: 0 0 5px 5px;
   
-
-
     .user_nickname{
       margin-left: 10px;
       font-weight: bold;
@@ -78,17 +94,10 @@
     .post__content--textbox{
       padding: 10px;
       
-
       &--text{
         margin-top: 10px;
       }
+    }
   }
-
-  }
-
-
-
-
-
 }
   

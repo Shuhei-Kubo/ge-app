@@ -6,23 +6,32 @@
       .user_profile_image
         = image_tag asset_path("A5275E9C-B6EC-4620-B46E-7AA77B5C465A.jpeg"), size: "40x40", class: "ge_logo" 
       .user_nickname
-        = current_user.nickname
+        = post.user.nickname
       .post_title_box 
         .post_title_name
           = post.title
+      .post-controll-btn
+        %ul.options-post 
+          = icon('fa', 'ellipsis-h')
+          //%li マイページ
+          %li
+            = link_to '削除', post_path(post.id), method: :delete
+          %li 
+            = link_to '編集', edit_post_path(post.id), method: :get
+
     .post__content
       - if post.image.present?
         .post__content--pic
           = image_tag post.image.to_s
         .post__content--textbox
           .user_nickname
-            = current_user.nickname
+            = post.user.nickname
           .post__content--text
             = post.text
       - else
         .post__content--textbox
           .user_nickname
-            = current_user.nickname
+          = post.user.nickname
           .post__content--text
             = post.text
         
