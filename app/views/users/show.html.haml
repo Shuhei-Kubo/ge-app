@@ -1,5 +1,16 @@
 = render partial: "layouts/header"
-  
+
+.main_profile_contents
+  .profile_image_content
+    .profile_image-pic
+      = image_tag asset_path("A5275E9C-B6EC-4620-B46E-7AA77B5C465A.jpeg"), size: "200x200", class: "ge_logo" 
+  .profile_main_content
+    .profile_user_name
+      = current_user.nickname
+    .profile_edit_btn 
+      = link_to 'プロフィールを編集', edit_user_path, method: :get
+    .profile_user_text
+      = current_user.profile_text
 - @posts.each do |post|
   .post_mainscreen
     .post_header
@@ -35,4 +46,6 @@
           = post.user.nickname
           .post__content--text
             = post.text
-        
+  
+  
+  

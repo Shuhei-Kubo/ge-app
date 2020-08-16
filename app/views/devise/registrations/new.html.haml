@@ -13,6 +13,11 @@
           = f.text_field :nickname, autofocus: true
       .FormField
         .FormField__label--normal
+          = f.label :profile_image
+        .FormField__input--normal
+          = f.file_field :profile_image
+      .FormField
+        .FormField__label--normal
           = f.label :last_name_kanji
         .FormField__input--normal
           = f.text_field :last_name_kanji, autofocus: true

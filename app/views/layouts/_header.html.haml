@@ -2,7 +2,7 @@
   .header_functions
     .left__part
       .logomark_app
-        = image_tag asset_path("GElogo.png"), size: "80x80", class: "ge_logo" 
+        = link_to image_tag(asset_path("GElogo.png"), size: "80x80", class: "ge_logo"), root_path
       .logo__title GUNJIN ENGLSIH
     .middle_part
       .home-header__search-box

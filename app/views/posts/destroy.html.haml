@@ -1,0 +1,14 @@
+.header
+  .header_functions
+    .left__part
+      .logomark_app
+        = image_tag asset_path("GElogo.png"), size: "80x80", class: "ge_logo" 
+      .logo__title GUNJIN ENGLSIH
+    .middle_part
+      .home-header__search-box
+  .delete-complete-message
+    .delete-message-box
+      %p 投稿は削除されました。
+    .back-toppage-btn
+      = link_to '投稿一覧へ戻る', root_path
+      
