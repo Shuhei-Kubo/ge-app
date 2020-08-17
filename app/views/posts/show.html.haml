@@ -1,0 +1,54 @@
+= render partial: "layouts/header"
+  
+.post_mainscreen
+  .post_header
+    .user_profile_image
+      = image_tag asset_path("A5275E9C-B6EC-4620-B46E-7AA77B5C465A.jpeg"), size: "40x40", class: "ge_logo" 
+    .user_nickname
+      = @post.user.nickname
+    .post_title_box 
+      .post_title_name
+        = @post.title
+    .post-controll-btn
+      %ul.options-post 
+        = icon('fa', 'ellipsis-h')
+        %li
+          = link_to 'マイページ', user_path(@post.id), method: :get
+        - if user_signed_in? && current_user.id == @post.user_id
+          %li
+            = link_to '削除', post_path(@post.id), method: :delete
+          %li 
+            = link_to '編集', edit_post_path(@post.id), method: :get
+        
+  .post__content
+    - if @post.image.present?
+      .post__content--pic
+        = image_tag @post.image.to_s
+      .post__content--textbox
+        .user_nickname
+          = @post.user.nickname
+        .post__content--text
+          = @post.text
+    - else
+      .post__content--textbox
+        .user_nickname
+          = @post.user.nickname
+        .post__content--text
+          = @post.text
+
+  .comment__box
+    - if current_user
+      = form_with model: [@post, @comment], local: true do |form|
+        = form.text_area :text, placeholder: "コメントする", class: "comment-form-box"
+        = form.submit "投稿する", class: "comment-btn"
+    - else
+      %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+    .comment-lists
+      - @comments.each do |comment|
+        .comment-list-container
+          .comment_user_name
+            = link_to comment.user.nickname, "/users/#{comment.user_id}"
+          .comment.text
+            = comment.text
+          
+        
