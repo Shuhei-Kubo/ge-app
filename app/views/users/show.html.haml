@@ -5,10 +5,11 @@
     .profile_image-pic
       = image_tag asset_path("A5275E9C-B6EC-4620-B46E-7AA77B5C465A.jpeg"), size: "200x200", class: "ge_logo" 
   .profile_main_content
-    .profile_user_name
-      = current_user.nickname
-    .profile_edit_btn 
-      = link_to 'プロフィールを編集', edit_user_path, method: :get
+    .profile_user_box
+      .profile_user_name
+        = current_user.nickname
+      .profile_edit_btn
+        = link_to 'プロフィールを編集', edit_user_path, method: :get
     .profile_user_text
       = current_user.profile_text
 - @posts.each do |post|
@@ -18,17 +19,15 @@
         = image_tag asset_path("A5275E9C-B6EC-4620-B46E-7AA77B5C465A.jpeg"), size: "40x40", class: "ge_logo" 
       .user_nickname
         = post.user.nickname
-      .post_title_box 
+      .post_title_box
         .post_title_name
           = post.title
       .post-controll-btn
-        %ul.options-post 
+        %ul.options-post
           = icon('fa', 'ellipsis-h')
           %li
-            = link_to 'マイページ', user_path(current_user.id), method: :get
-          %li
             = link_to '削除', post_path(post.id), method: :delete
-          %li 
+          %li
             = link_to '編集', edit_post_path(post.id), method: :get
 
     .post__content

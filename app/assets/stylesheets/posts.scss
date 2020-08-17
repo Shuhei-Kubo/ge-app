@@ -2,6 +2,9 @@
 * {
   box-sizing: border-box;
 }
+body{
+  background-color: #F6f6f4;
+}
 
 .post_mainscreen{
   width: 50%;
@@ -45,6 +48,7 @@
         position: absolute;
         top: 15px;
         left: 40%;
+        
       }
      .post-controll-btn{
        position: absolute;
@@ -93,6 +97,9 @@
     }
     .post__content--textbox{
       padding: 10px;
+      background-color: #ffffff;
+      border-radius: 0 0 5px 5px;
+
       
       &--text{
         margin-top: 10px;

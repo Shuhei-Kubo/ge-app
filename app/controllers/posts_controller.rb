@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
+  before_action :set_post, only: [:edit, :show]
 
 
   def index
@@ -17,6 +18,12 @@ class PostsController < ApplicationController
      end
   end
 
+  def show
+    @comment = Comment.new
+    @comments = @post.comments.includes(:user)
+   
+  end 
+
   def destroy
     post = Post.find(params[:id])
     post.destroy
@@ -24,7 +31,6 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
   end
   
   def update
@@ -40,6 +46,12 @@ class PostsController < ApplicationController
       redirect_to action: :index
     end
   end
+
+  def set_post
+    @post = Post.find(params[:id])
+  end
+
+
 
   private
   def post_params
