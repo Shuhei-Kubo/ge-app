@@ -8,9 +8,9 @@
     = form_for(current_user) do |f|
       .FormField
         .FormField__label--normal
-          = f.label :プロフィール写真を変更
+          = f.label :プロフィール画像
         .FormField__input--normal
-          = f.text_field :profile_image, autofocus: true
+          = f.file_field :profile_image
       .user_name
         = current_user.nickname
       .FormField
@@ -26,7 +26,7 @@
       .FormField
         .FormField__label--normal
           = f.label :自己紹介
-        .FormField__input--normal
-          = f.text_area :profile_text
+        .FormField__profile__text
+          = f.text_area :profile_text, autofocus: true, maxlength: "150"
       
       = f.submit "Update", class: 'Button UserButton'

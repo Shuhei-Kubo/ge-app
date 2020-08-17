@@ -3,8 +3,8 @@
 .form_newpost
   = form_with model: @post do |form|
     .form-title-box
-      = form.label :タイトルを入力してください!
-      = form.text_field :title, class: "title-input-form" 
+      = form.label :タイトルを入力してください！（２０文字以内）
+      = form.text_field :title, class: "title-input-form", maxlength: "20"
     .form-text-box
       = form.label :気になることを質問しよう!
       = form.text_area :text, rows: "10", class: "text-content"
