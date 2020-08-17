@@ -7,11 +7,11 @@
   .profile_main_content
     .profile_user_box
       .profile_user_name
-        = current_user.nickname
+        =  @user.nickname
       .profile_edit_btn
         = link_to 'プロフィールを編集', edit_user_path, method: :get
     .profile_user_text
-      = current_user.profile_text
+      =  @user.profile_text
 - @posts.each do |post|
   .post_mainscreen
     .post_header
