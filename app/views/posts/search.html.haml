@@ -1,36 +1,28 @@
 = render partial: "layouts/header"
 
-.main_profile_contents
-  .profile_image_content
-    .profile_image-pic
-      = @user.profile_image
-  .profile_main_content
-    .profile_user_box
-      .profile_user_name
-        =  @user.nickname
-      - if user_signed_in? && current_user.id == @user.id
-        .profile_edit_btn
-          = link_to 'プロフィールを編集', edit_user_path(@user), method: :get
-    .profile_user_text
-      =  @user.profile_text
 - @posts.each do |post|
   .post_mainscreen
     .post_header
       .user_profile_image
-        //= post.user.profile_image 
+        //= image_tag asset_path("A5275E9C-B6EC-4620-B46E-7AA77B5C465A.jpeg"), size: "40x40", class: "ge_logo" 
       .user_nickname
         = post.user.nickname
-      .post_title_box
+      .post_title_box 
         .post_title_name
           = post.title
       .post-controll-btn
-        %ul.options-post
+        %ul.options-post 
           = icon('fa', 'ellipsis-h')
           %li
-            = link_to '削除', post_path(post.id), method: :delete
+            = link_to 'マイページ', user_path(post.user_id), method: :get
           %li
-            = link_to '編集', edit_post_path(post.id), method: :get
-
+            = link_to 'コメント', post_path(post.id), method: :get
+          - if user_signed_in? && current_user.id == post.user_id
+            %li
+              = link_to '削除', post_path(post.id), method: :delete
+            %li 
+              = link_to '編集', edit_post_path(post.id), method: :get
+              
     .post__content
       - if post.image.present?
         .post__content--pic
@@ -46,7 +38,5 @@
           = post.user.nickname
           .post__content--text
             = post.text
-
+        
 = render partial: "layouts/footer"
-  
-  

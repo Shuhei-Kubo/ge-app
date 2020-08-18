@@ -6,8 +6,12 @@
       .logo__title GUNJIN ENGLSIH
     .middle_part
       .home-header__search-box
-        = form_with local: true  do |form|
-          = form.text_field placeholder: "キーワードから探す", class: "searchbox-input"
+        = form_with(url: search_posts_path, local: true, method: :get, class: "form") do |form|
+          = form.text_field :keyword, placeholder: "キーワードから探す", class: "searchbox-input"
+        = link_to search_posts_path do
+          %button{type: "submit"}
+            .search-btn
+              = icon('fa','search')
     .right__part
       - if user_signed_in?
         .user_btn_logout_post

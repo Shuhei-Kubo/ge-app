@@ -3,10 +3,13 @@ Rails.application.routes.draw do
   root to: 'posts#index'
   
   resources :posts do
-    resources :comments, only: :create
+    resources :comments, only: [:create, :destroy]
+
+    collection do
+      get 'search'
+      end
   end
-  resources :users, only: [:edit, :index, :show, :update]
-
- 
-
+  
+  resources :users, only: [:edit, :index, :show, :update] do
+  end
 end

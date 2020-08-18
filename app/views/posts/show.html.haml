@@ -46,9 +46,14 @@
     .comment-lists
       - @comments.each do |comment|
         .comment-list-container
-          .comment_user_name
-            = link_to comment.user.nickname, "/users/#{comment.user_id}"
-          .comment.text
-            = comment.text
-          
+          .left-box-name-text
+            .comment_user_name
+              = link_to comment.user.nickname, "/users/#{comment.user_id}"
+            .comment.text
+              = comment.text
+          - if user_signed_in? && current_user.id == @post.user_id
+            .comment_delete_btn
+              = link_to '削除', post_comment_path(comment, comment.id), method: :delete
+            
+= render partial: "layouts/footer"
         
