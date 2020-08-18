@@ -34,13 +34,27 @@
   }
 
   .middle_part{
+    width: 500px;
+   
+    .home-header__search-box{
+      display: flex;
     
-    input{
-      width: 250px;
-      margin-bottom: 10px;
-      margin-right: 150px;
+      input{
+        width: 270px;
+        margin-bottom: 10px;
+      }
+      button{
+        width: 28px;
+        height: 28px;
+        padding: 2px;
 
-    }
+        i{
+        font-size: 18px;
+        
+        } 
+      
+      }
+   }
   }
   
   .right__part{

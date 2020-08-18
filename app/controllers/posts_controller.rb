@@ -18,6 +18,11 @@ class PostsController < ApplicationController
      end
   end
 
+  def search
+    redirect_to search_path if params[:keyword] == ""
+    @posts = Post.where('title LIKE(?) OR text LIKE(?)', "%#{params[:keyword]}%", "%#{params[:keyword]}%").order("created_at DESC")
+  end
+
   def show
     @comment = Comment.new
     @comments = @post.comments.includes(:user)
@@ -27,7 +32,6 @@ class PostsController < ApplicationController
   def destroy
     post = Post.find(params[:id])
     post.destroy
-  
   end
 
   def edit
@@ -47,9 +51,7 @@ class PostsController < ApplicationController
     end
   end
 
-  def set_post
-    @post = Post.find(params[:id])
-  end
+  
 
 
 
@@ -57,4 +59,8 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :text, :image).merge(user_id: current_user.id)
   end
+end
+
+def set_post
+  @post = Post.find(params[:id])
 end

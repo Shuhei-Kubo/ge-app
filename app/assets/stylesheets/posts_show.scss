@@ -9,11 +9,13 @@
   
   .comment-form-box{
     width: 100%;
+    padding: 8px;
+    height: 40px;
   }
 
   .comment-btn{
     position: absolute;
-    top: 32px;
+    top: 26px;
     right: 50px; 
   }
   
@@ -23,14 +25,30 @@
       width: 100%;
       margin-top: 10px;
       display: flex;
-     
-      a{
-        text-decoration: none;
-        color: black;
+      justify-content: space-between;
+
+      .left-box-name-text{
+        display: flex;
+
+      .comment_user_name{
+        font-weight: bold;
       }
 
       .comment.text{
         margin-left: 20px;
+      }
+    }
+
+    a{
+      text-decoration: none;
+      color: black;
+    }
+
+      .comment_delete_btn{
+        border: solid 1px black;
+        padding: 3px 5px;
+        border-radius: 5px 5px;
+
       }
 
   }
