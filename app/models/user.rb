@@ -8,6 +8,12 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
 
+  mount_uploader :avatar, AvatarUploader
+  mount_uploader :profile_image, ImageUploader
+
+
+
+  validates :nickname, presence: true
   validates :profile_text, length: { maximum: 250 }
  
 
