@@ -1,9 +1,14 @@
 
-* {
-  box-sizing: border-box;
-}
-body{
+
+* { box-sizing: border-box; }
+html,body{
   background-color: #F6f6f4;
+  height: calc(100vh - 435px);
+  margin: 0;
+  
+}
+.wrapper {
+  min-height: 100%;
 }
 
 .post_mainscreen{
@@ -21,7 +26,7 @@ body{
     border-radius: 5px 5px 0 0;
     border: 1px solid black;
     border-bottom: 0;
-    margin-top: 30px;
+    margin-top: 50px;
     position: relative;
 
     .user_profile_image{
@@ -52,21 +57,61 @@ body{
       }
      .post-controll-btn{
        position: absolute;
-       right: 20px;
+       right: 10px;
        top: 15px;
 
        
+       a{
+         text-decoration: none;
+         color: black;
+       }
 
-       li{
+       li.mypage_link{
          display: none;
+         position: absolute;
+         top: 0px;
+         left: 17px;
+        //  border-top: solid 1px black;
+        //  border-left: solid 1px black;
+        //  border-right: solid 1px black;
+        //  border-radius: 5px 5px 0 0;
+         
+       }
+       li.comment_link{
+        display: none;
+        position: absolute;
+        top: 20px;
+        left: 17px;
+        // border-left: solid 1px black;
+        // border-right: solid 1px black;
+       }
+
+       li.delete_link{
+        display: none;
+        position: absolute;
+        top: 40px;
+        left: 17px;
+        // border-left: solid 1px black;
+        // border-right: solid 1px black;
+       }
+
+       li.edit_link{
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 17px;
+        // border-left: solid 1px black;
+        // border-right: solid 1px black;
+        // border-bottom: solid 1px black;
+        // border-radius: 0 0 5px 5px;
+
        }
        ul.options-post:hover li{
         display: block;
         background-color: #fafafafa;
-        
-
         height: 25px;
         width: 150px;
+        
          
 
        }
@@ -77,6 +122,8 @@ body{
   .post__content{
   border: 1px solid black;
   border-radius: 0 0 5px 5px;
+  
+  
   
     .user_nickname{
       margin-left: 10px;
@@ -99,10 +146,13 @@ body{
       padding: 10px;
       background-color: #ffffff;
       border-radius: 0 0 5px 5px;
+      word-break: break-all;
+      
 
       
       &--text{
         margin-top: 10px;
+        
       }
     }
   }

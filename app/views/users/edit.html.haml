@@ -10,7 +10,7 @@
         .FormField__label--normal
           = f.label :プロフィール画像
         .FormField__input--normal
-          = f.file_field :profile_image
+          = f.file_field :profile_image, class: 'account_profile_image', id: 'upload-icon'
       .user_name
         = current_user.nickname
       .FormField
