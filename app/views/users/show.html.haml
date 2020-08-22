@@ -3,7 +3,11 @@
 .main_profile_contents
   .profile_image_content
     .profile_image-pic
-      = @user.profile_image.to_s
+      - if @user.profile_image?
+        = image_tag @user.profile_image.to_s
+      - else
+        = image_tag current_user.avatar.to_s
+      
   .profile_main_content
     .profile_user_box
       .profile_user_name
@@ -26,9 +30,9 @@
       .post-controll-btn
         %ul.options-post
           = icon('fa', 'ellipsis-h')
-          %li
+          %li.delete_link
             = link_to '削除', post_path(post.id), method: :delete
-          %li
+          %li.edit_link
             = link_to '編集', edit_post_path(post.id), method: :get
 
     .post__content

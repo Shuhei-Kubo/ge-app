@@ -13,16 +13,6 @@
           = f.text_field :nickname, autofocus: true
       .FormField
         .FormField__label--normal
-          = f.label :プロフィール画像
-        .FormField__input--normal
-          = f.file_field :profile_image
-      .FormField
-        .FormField__label--normal
-          = f.label :自己紹介
-        .FormField__profile__text
-          = f.text_area :profile_text, autofocus: true, maxlength: "150"
-      .FormField
-        .FormField__label--normal
           = f.label :性（漢字）
         .FormField__input--normal
           = f.text_field :last_name_kanji, autofocus: true
