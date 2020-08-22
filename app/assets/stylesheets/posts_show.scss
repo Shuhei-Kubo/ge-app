@@ -1,9 +1,11 @@
+
+
 .comment__box{
   
   border: solid 1px black;
   background-color: #ffffff;
   padding: 20px 36px;
-  margin-top: 20px;
+  margin-top: 40px;
   border-radius: 5px 5px;
   position: relative;
   
@@ -45,9 +47,13 @@
     }
 
       .comment_delete_btn{
-        border: solid 1px black;
         padding: 3px 5px;
-        border-radius: 5px 5px;
+        font-size: 20px;
+
+        i{
+          color: rgb(83, 238, 104);
+        }
+        
 
       }
 

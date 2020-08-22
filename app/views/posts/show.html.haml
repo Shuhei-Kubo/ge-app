@@ -12,12 +12,12 @@
     .post-controll-btn
       %ul.options-post 
         = icon('fa', 'ellipsis-h')
-        %li
+        %li.mypage_link
           = link_to 'マイページ', user_path(@post.user_id), method: :get
         - if user_signed_in? && current_user.id == @post.user_id
-          %li
+          %li.delete_link
             = link_to '削除', post_path(@post.id), method: :delete
-          %li 
+          %li.edit_link
             = link_to '編集', edit_post_path(@post.id), method: :get
         
   .post__content
@@ -38,22 +38,15 @@
 
   .comment__box
     - if current_user
-      = form_with model: [@post, @comment], local: true do |form|
+      = form_with model: [@post, @comment], id: "new_comment", remote: true do |form|
         = form.text_area :text, placeholder: "コメントする", class: "comment-form-box"
         = form.submit "投稿する", class: "comment-btn"
     - else
       %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
-    .comment-lists
-      - @comments.each do |comment|
-        .comment-list-container
-          .left-box-name-text
-            .comment_user_name
-              = link_to comment.user.nickname, "/users/#{comment.user_id}"
-            .comment.text
-              = comment.text
-          - if user_signed_in? && current_user.id == @post.user_id
-            .comment_delete_btn
-              = link_to '削除', post_comment_path(comment, comment.id), method: :delete
+    .comment-lists{id: "comments-add-event"}
+      = render partial: "comments/comment", locals: {comment: @comments}
+              
+
             
 = render partial: "layouts/footer"
         
