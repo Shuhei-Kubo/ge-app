@@ -5,6 +5,8 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all.order(created_at: :desc)
+    @like = Like.new
+    # @user = User.find(params[:id])
   end
 
   def new
@@ -29,8 +31,6 @@ class PostsController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @post.comments.includes(:user).order("created_at DESC")
-
-   
   end 
 
   def destroy
