@@ -14,7 +14,11 @@ class User < ApplicationRecord
 
 
   validates :nickname, presence: true
-  validates :profile_text, length: { maximum: 250 }
+  validates :profile_text, length: { maximum: 200 }
+
+  def already_liked?(post)
+    self.likes.exists?(post_id: post.id)
+  end
  
 
   

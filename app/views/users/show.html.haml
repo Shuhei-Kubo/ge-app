@@ -21,19 +21,28 @@
   .post_mainscreen
     .post_header
       .user_profile_image
-        //= post.user.profile_image 
+        - if post.user.profile_image?
+          = image_tag post.user.profile_image.to_s
+        - else
+          = image_tag current_user.avatar.to_s
       .user_nickname
         = post.user.nickname
       .post_title_box
         .post_title_name
           = post.title
       .post-controll-btn
+        .like_icon
+          = icon('far', 'heart')
+        .comment_icon
+          = link_to post_path(post.id), method: :get do
+            %i.far.fa-comment
         %ul.options-post
           = icon('fa', 'ellipsis-h')
-          %li.delete_link
-            = link_to '削除', post_path(post.id), method: :delete
-          %li.edit_link
-            = link_to '編集', edit_post_path(post.id), method: :get
+          - if user_signed_in? && current_user.id == @user.id
+            %li.delete_link
+              = link_to '削除', post_path(post.id), method: :delete
+            %li.edit_link
+              = link_to '編集', edit_post_path(post.id), method: :get
 
     .post__content
       - if post.image.present?

@@ -3,17 +3,20 @@
 .post_mainscreen
   .post_header
     .user_profile_image
-      //= image_tag asset_path("A5275E9C-B6EC-4620-B46E-7AA77B5C465A.jpeg"), size: "40x40", class: "ge_logo" 
+      - if @post.user.profile_image?
+        = link_to image_tag(@post.user.profile_image.to_s), user_path(@post.user_id), method: :get
+      - else
+        = link_to image_tag(current_user.avatar.to_s), user_path(@post.user_id), method: :get
     .user_nickname
       = @post.user.nickname
     .post_title_box 
       .post_title_name
         = @post.title
     .post-controll-btn
+      .like_icon
+        = icon('far', 'heart')
       %ul.options-post 
         = icon('fa', 'ellipsis-h')
-        %li.mypage_link
-          = link_to 'マイページ', user_path(@post.user_id), method: :get
         - if user_signed_in? && current_user.id == @post.user_id
           %li.delete_link
             = link_to '削除', post_path(@post.id), method: :delete

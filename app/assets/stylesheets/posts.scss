@@ -56,6 +56,7 @@ html,body{
         
       }
      .post-controll-btn{
+       display: flex;
        position: absolute;
        right: 10px;
        top: 15px;
@@ -66,21 +67,11 @@ html,body{
          color: black;
        }
 
-       li.mypage_link{
-         display: none;
-         position: absolute;
-         top: 0px;
-         left: 17px;
-        //  border-top: solid 1px black;
-        //  border-left: solid 1px black;
-        //  border-right: solid 1px black;
-        //  border-radius: 5px 5px 0 0;
-         
-       }
+       
        li.comment_link{
         display: none;
         position: absolute;
-        top: 20px;
+        top: 0px;
         left: 17px;
         // border-left: solid 1px black;
         // border-right: solid 1px black;
@@ -89,7 +80,7 @@ html,body{
        li.delete_link{
         display: none;
         position: absolute;
-        top: 40px;
+        top: 20px;
         left: 17px;
         // border-left: solid 1px black;
         // border-right: solid 1px black;
@@ -98,7 +89,7 @@ html,body{
        li.edit_link{
         display: none;
         position: absolute;
-        top: 60px;
+        top: 40px;
         left: 17px;
         // border-left: solid 1px black;
         // border-right: solid 1px black;
@@ -111,9 +102,17 @@ html,body{
         background-color: #fafafafa;
         height: 25px;
         width: 150px;
-        
-         
-
+       }
+       .comment_icon{
+         height: 30px;
+         width: 30px;
+       }
+       .like_icon{
+        height: 30px;
+        width: 30px
+       }
+       i{
+         font-size: 25px;
        }
 
      }  
@@ -147,7 +146,6 @@ html,body{
       background-color: #ffffff;
       border-radius: 0 0 5px 5px;
       word-break: break-all;
-      
 
       
       &--text{
