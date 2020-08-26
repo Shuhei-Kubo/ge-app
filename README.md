@@ -1,7 +1,5 @@
 # README
 
-# :pushpin: アプリ紹介
-
 ## :computer: 主な使用言語・ソフトウェア
 
 <img src="https://github.com/s79ns/oa/blob/master/app/assets/images/ruby-logo.png" width="20%"><img src="https://github.com/s79ns/oa/blob/master/app/assets/images/rails_logo.png" width="20%"><img src="https://github.com/s79ns/oa/blob/master/app/assets/images/haml.png" width="20%"><img src="https://github.com/s79ns/oa/blob/master/app/assets/images/sass.png" width="20%"><img src="https://github.com/s79ns/oa/blob/master/app/assets/images/mysql.png" width="20%">
@@ -9,6 +7,13 @@
 ## :speech_balloon: アプリケーション名
 
 GE-app
+
+英語を学習する日本人と日本語を学習する外国人の間での言語質問アプリです。<br>
+質問に関する投稿をしてそれを見た他のユーザーはコメントとしてその質問に答えることができます。<br>
+自分が投稿せずとも自分が知りたい表現方法などがある場合は検索をかけて他のユーザーがした投稿をチェックすることができます。<br>
+また、マイページがあることにより経歴や自分の趣味など共有できる場にもなり得ると考えています。<br>
+
+
 ## :本番環境 url
 
 👉[こちらが本番環境のurl](http://54.168.10.101/)
