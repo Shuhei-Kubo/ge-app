@@ -1,28 +1,28 @@
 class CommentsController < ApplicationController
   def create
-    @comment = Comment.create(comment_params)
-    @comment.save
-    redirect_to post_path(params[:post_id])
+    # @comment = Comment.create(comment_params)
+    # @comment.save
+    # render :create
+    # redirect_to post_path(params[:post_id])
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.build(comment_params)
+    @comment.user_id = current_user.id 
+    @comments = @post.comments.includes(:user).order("created_at DESC")
+
+  if @comment.save
+    render :create
+  end
     
   end
   
 
-  # def create
-  #   @comment = Comment.create(comment_params)
-  #   if @comment.save
-  #     respond_to do |format|
-  #     format.html { redirect_to post_path(params[:post_id]) }
-  #     format.json
-  #   end
-      
-  #   end
-  # end
-
-  
 
   def destroy
+    @post = Post.find(params[:post_id])
     @comment = Comment.find(params[:id])
+    @comments = @post.comments.includes(:user).order("created_at DESC")
     @comment.destroy
+    render :destroy
     
     # comment = Comment.find(params[:id])
     # post = comment.post
