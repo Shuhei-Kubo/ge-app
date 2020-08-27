@@ -44,10 +44,12 @@
       = form_with model: [@post, @comment], id: "new_comment", remote: true do |form|
         = form.text_area :text, placeholder: "コメントする", class: "comment-form-box"
         = form.submit "投稿する", class: "comment-btn"
+      .comment-lists{id: "comments-event"}
+        = render partial: "comments/comment", locals: {comment: @comments}
     - else
       %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
-    .comment-lists{id: "comments-add-event"}
-      = render partial: "comments/comment", locals: {comment: @comments}
+    -# .comment-lists{id: "comments-add-event"}
+    -#   = render partial: "comments/comment", locals: {comment: @comments}
               
 
             

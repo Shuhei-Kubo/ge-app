@@ -7,5 +7,5 @@
         = comment.text
     - if user_signed_in? && current_user.id == @post.user_id
       .comment_delete_btn
-        = link_to post_comment_path(comment, comment.id), method: :delete, remote: true do
+        = link_to post_comment_path(@post, comment.id), method: :delete, remote: true do
           %i.fas.fa-trash-alt

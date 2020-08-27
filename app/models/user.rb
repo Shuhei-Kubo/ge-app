@@ -13,7 +13,7 @@ class User < ApplicationRecord
 
 
 
-  validates :nickname, presence: true
+  validates :nickname, presence: true, uniqueness: true
   validates :profile_text, length: { maximum: 200 }
 
   def already_liked?(post)

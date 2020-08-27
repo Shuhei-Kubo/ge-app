@@ -1,1 +1,2 @@
-$('#comments_delete-event').remove();
+$("#comments-event").html("<%= j(render 'comments/comment', comment: @comments) %>")
+$("textarea").val('')
