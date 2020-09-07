@@ -14,14 +14,12 @@
           .post_title_name
             = post.title
         .post-controll-btn
-          .like_icon
-            = icon('far', 'heart')
-          .count_likes 1
-          -# - if current_user.already_liked?(@post)
+          .like_btn{id: "like-btn-event"}
+            = render partial: "likes/like", locals: {post: post}
           .comment_icon
             = link_to post_path(post.id), method: :get do
               %i.far.fa-comment
-          %ul.options-post 
+          %ul.options-post
             = icon('fa', 'ellipsis-h')
             - if user_signed_in? && current_user.id == post.user_id
               %li.delete_link

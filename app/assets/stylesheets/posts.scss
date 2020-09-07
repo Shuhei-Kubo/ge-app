@@ -106,9 +106,10 @@ html,body{
          height: 30px;
          width: 30px;
        }
-       .like_icon{
+       .like_btn{
+        display: flex;
         height: 30px;
-        width: 30px
+        width: 40px
        }
        i{
          font-size: 25px;

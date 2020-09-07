@@ -1,5 +1,5 @@
 - @comments.each do |comment|
-  .comment-list-container{id: "comments_delete-event"}
+  .comment-list-container
     .left-box-name-text
       .comment_user_name
         = link_to comment.user.nickname, "/users/#{comment.user_id}"
