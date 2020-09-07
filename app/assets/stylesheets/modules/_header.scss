@@ -65,6 +65,23 @@
         width: 300px;
       }
 
+      
+      .user_profile_image-header{
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        margin-left: 20px;
+        margin-bottom: 10px;
+
+  
+        img{
+          border-radius: 50%;
+          height: 50px;
+          width: 50px;
+        }
+      }
+
+
       .home_btn{
         background-color: black;
         height: 50px;

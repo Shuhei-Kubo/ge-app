@@ -31,8 +31,8 @@
         .post_title_name
           = post.title
       .post-controll-btn
-        .like_icon
-          = icon('far', 'heart')
+        .like_btn{id: "like-btn-event"}
+          = render partial: "likes/like", locals: {post: post}
         .comment_icon
           = link_to post_path(post.id), method: :get do
             %i.far.fa-comment
