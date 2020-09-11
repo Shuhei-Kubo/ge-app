@@ -31,7 +31,7 @@
         .post_title_name
           = post.title
       .post-controll-btn
-        .like_btn{id: "like-btn-event"}
+        .like_btn{id: "likes_buttons_#{post.id}"}
           = render partial: "likes/like", locals: {post: post}
         .comment_icon
           = link_to post_path(post.id), method: :get do

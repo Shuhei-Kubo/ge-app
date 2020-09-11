@@ -13,15 +13,8 @@
       .post_title_name
         = @post.title
     .post-controll-btn
-      .like_btn{id: "like-btn-event"}
+      .like_btn{id: "likes_buttons_#{@post.id}"}
         = render partial: "likes/like", locals: {post: @post}
-      -# - if current_user.already_liked?(@post)
-      -#   = link_to post_likes_path(@post), method: :delete do
-      -#     %i.fas.fa-heart
-      -# - else
-      -#   = link_to post_likes_path(@post), method: :post do
-      -#     %i.far.fa-heart
-      -# = @post.likes.count
       %ul.options-post 
         = icon('fa', 'ellipsis-h')
         - if user_signed_in? && current_user.id == @post.user_id
