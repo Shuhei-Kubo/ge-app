@@ -7,14 +7,14 @@
           - if post.user.profile_image?
             = link_to image_tag(post.user.profile_image.to_s), user_path(post.user_id), method: :get
           - else
-            = link_to image_tag(current_user.avatar.to_s), user_path(post.user_id), method: :get
+            = link_to image_tag(post.user.avatar.to_s), user_path(post.user_id), method: :get
         .user_nickname
           = post.user.nickname
-        .post_title_box 
+        .post_title_box
           .post_title_name
             = post.title
         .post-controll-btn
-          .like_btn{id: "like-btn-event"}
+          .like_btn{id: "likes_buttons_#{post.id}"}
             = render partial: "likes/like", locals: {post: post}
           .comment_icon
             = link_to post_path(post.id), method: :get do
@@ -36,11 +36,21 @@
               = post.user.nickname
             .post__content--text
               = post.text
+            %input{ type: "checkbox", id: "label1", class: "chenge-btn" }
+            -# .translate-btn
+            -#   %label cheat?
+            .post__content--text--english
+              = translator(post.text)
         - else
           .post__content--textbox
             .user_nickname
               = post.user.nickname
             .post__content--text
               = post.text
+            %input{ type: "checkbox", id: "label1", class: "chenge-btn" }
+            -# .translate-btn
+            -#   %label cheat?
+            .post__content--text--english
+              = translator(post.text)
         
 = render partial: "layouts/footer"

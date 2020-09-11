@@ -65,10 +65,11 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'font-awesome-sass'
-gem 'pry-rails'
 gem "haml-rails", ">= 1.0", '<= 2.0.1'
 gem 'fog-aws'
 gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'jquery-rails'
+gem "google-cloud"
+gem "google-cloud-translate"

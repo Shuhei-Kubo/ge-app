@@ -29,3 +29,7 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+# Ignore local_env file and JSON key file
+/config/local_env.yml
+/config/google_cloud.json

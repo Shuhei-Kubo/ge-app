@@ -2,13 +2,14 @@ class PostsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
   before_action :set_post, only: [:edit, :show]
 
+  include PostsHelper
 
   def index
     @posts = Post.all.order(created_at: :desc)
     @like = Like.new
-
-    # @user = User.find(params[:id])
+    @post = Post.find_by(params[:id])
   end
+
 
   def new
     @post = Post.new  
