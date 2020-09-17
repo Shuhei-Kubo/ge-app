@@ -5,6 +5,8 @@
         = link_to comment.user.nickname, "/users/#{comment.user_id}"
       .comment.text
         = comment.text
+      .comment-created-time
+        = comment.created_at.strftime("%Y-%m-%d%H:%M")
     - if user_signed_in? && current_user.id == @post.user_id
       .comment_delete_btn
         = link_to post_comment_path(@post, comment.id), method: :delete, remote: true do

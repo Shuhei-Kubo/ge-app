@@ -3,6 +3,10 @@ class LikesController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @like = current_user.likes.create(post_id: params[:post_id])
+    unless user_signed_in?
+      flash[:alert] = "ログインしてください"
+      redirect_to root_path
+    end
     # redirect_back(fallback_location: root_path)
   end
 
