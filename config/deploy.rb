@@ -6,6 +6,7 @@ set :application, 'ge-app'
 set :repo_url,  'git@github.com:Shuhei-Kubo/ge-app.git'
 # set :linked_files, fetch(:linked_files, []).push('config/local_env.yml')
 set :linked_files, %w{config/local_env.yml}
+set :linked_files, %w{config/google_cloud.json}
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 
 set :rbenv_type, :user
@@ -36,6 +37,8 @@ namespace :deploy do
       end
       upload!('config/master.key', "#{shared_path}/config/master.key")
       upload!('config/local_env.yml',"#{shared_path}/config/local_env.yml")
+      upload!('config/google_cloud.json',"#{shared_path}/config/google_cloud.json")
+
     end
   end
   before :starting, 'deploy:upload'
