@@ -24,7 +24,7 @@
             = link_to image_tag(current_user.avatar.to_s), user_path(current_user.id), method: :get
       - else
         .user_btn_login_sign_up
-          -# = link_to 'ゲスト(閲覧用）', users_guest_sign_in_path, method: :post, class: "post"
+          = link_to 'ゲスト(閲覧用）', users_guest_sign_in_path, method: :post, class: "post"
           = link_to "ログイン", new_user_session_path, class: "post"
           = link_to "新規登録", new_user_registration_path, class: "post"
     
