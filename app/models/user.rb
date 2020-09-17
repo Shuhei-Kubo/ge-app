@@ -20,12 +20,12 @@ class User < ApplicationRecord
     self.likes.exists?(post_id: post.id)
   end
 
-  def self.guest
-    find_or_create_by!(email: 'guest@example.com', nickname: 'guestさん', last_name_kanji: 'guest_last_name', first_name_kanji: 'guest_first_name') do |user|
-      user.password = SecureRandom.urlsafe_base64
-      # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
-    end
-  end
+  # def self.guest
+  #   find_or_create_by!(email: 'guest@example.com', nickname: 'guestさん', last_name_kanji: 'guest_last_name', first_name_kanji: 'guest_first_name') do |user|
+  #     user.password = SecureRandom.urlsafe_base64
+  #     # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
+  #   end
+  # end
  
 
   
