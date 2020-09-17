@@ -10,6 +10,8 @@ class PostsController < ApplicationController
     @post = Post.find_by(params[:id])
   end
 
+  
+
 
   def new
     @post = Post.new  
