@@ -28,6 +28,7 @@
       margin-top: 10px;
       display: flex;
       justify-content: space-between;
+      position: relative;
 
       .left-box-name-text{
         display: flex;
@@ -38,6 +39,12 @@
 
       .comment.text{
         margin-left: 20px;
+      }
+      .comment-created-time{
+        font-size: 13px;
+        position: absolute;
+        top: 0px;
+        right: 35px;
       }
     }
 
