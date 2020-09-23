@@ -37,7 +37,7 @@ namespace :deploy do
         execute "mkdir -p #{shared_path}/config"
       end
       upload!('config/master.key', "#{shared_path}/config/master.key")
-      # upload!('config/local_env.yml',"#{shared_path}/config/local_env.yml")
+      upload!('config/local_env.yml',"#{shared_path}/config/local_env.yml")
       # upload!('config/google_cloud.json',"#{shared_path}/config/google_cloud.json")
 
     end
