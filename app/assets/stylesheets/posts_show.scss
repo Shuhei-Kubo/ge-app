@@ -10,15 +10,16 @@
   position: relative;
   
   .comment-form-box{
-    width: 100%;
+    width: 85%;
     padding: 8px;
     height: 40px;
   }
 
   .comment-btn{
     position: absolute;
-    top: 26px;
+    top: 25px;
     right: 50px; 
+    height: 35px;
   }
   
   
@@ -29,12 +30,15 @@
       display: flex;
       justify-content: space-between;
       position: relative;
+      word-break: break-all;
 
       .left-box-name-text{
+        width: 500px;
         display: flex;
 
       .comment_user_name{
         font-weight: bold;
+        width: 70px;
       }
 
       .comment.text{
@@ -45,6 +49,7 @@
         position: absolute;
         top: 0px;
         right: 35px;
+        margin-left: 10px;
       }
     }
 
