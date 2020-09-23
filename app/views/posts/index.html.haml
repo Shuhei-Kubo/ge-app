@@ -35,7 +35,7 @@
             .user_nickname
               = post.user.nickname
             .post-created-time
-              = post.created_at.strftime("%Y-%m-%d%H:%M")
+              = post.created_at.strftime('%Y/%m/%d')
             .post__content--text
               = post.text
             %input{ type: "checkbox", id: "label1", class: "chenge-btn" }
@@ -48,7 +48,7 @@
             .user_nickname
               = post.user.nickname
             .post-created-time
-              = post.created_at.strftime("%Y-%m-%d%H:%M")
+              = post.created_at.strftime('%Y/%m/%d')
             .post__content--text
               = post.text
             %input{ type: "checkbox", id: "label1", class: "chenge-btn" }
