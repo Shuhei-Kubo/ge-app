@@ -27,8 +27,8 @@ set :linked_files, %w{ config/local_env.yml }
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   task :restart do
-    invoke 'unicorn:stop'
-    invoke 'unicorn:start'
+    # invoke 'unicorn:stop'
+    invoke 'unicorn:restart'
   end
 
   desc 'upload master.key'
@@ -38,9 +38,16 @@ namespace :deploy do
         execute "mkdir -p #{shared_path}/config"
       end
       upload!('config/master.key', "#{shared_path}/config/master.key")
-      upload!('config/local_env.yml',"#{shared_path}/config/local_env.yml")
-      # upload!('config/google_cloud.json',"#{shared_path}/config/google_cloud.json")
+  end
+end
 
+  desc 'upload google_cloud.json'
+  task :upload do
+    on roles(:app) do |host|
+      if test "[ ! -d #{shared_path}/config ]"
+        execute "mkdir -p #{shared_path}/config"
+      end
+      upload!('config/google_cloud.json',"#{shared_path}/config/google_cloud.json")
     end
   end
   before :starting, 'deploy:upload'
