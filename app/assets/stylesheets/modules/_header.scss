@@ -64,8 +64,25 @@
         height: 30px;
         width: 300px;
       }
+      .user_btn_logout_post{
+        background-color: #38aef0;
+        width: 100px;
+        height: 30px;
+        border-radius: 50px;
+        padding: 5px;
+        margin-left: 10px;
+        text-align: center;
+        box-shadow: 0 0 8px gray;
 
+      .post{
+        text-decoration: none;
+        color: white;
+
+        }
+      }
       
+
+    
       .user_profile_image-header{
         height: 50px;
         width: 50px;
@@ -80,13 +97,23 @@
           width: 50px;
         }
       }
-
-
-      .home_btn{
-        background-color: black;
-        height: 50px;
-        width: 50px;
-      }
   }
  }
 }
+
+.post{
+  text-decoration: none;
+  color: white;
+
+  }
+
+  .user_btn_login_sign_up{
+    background-color: #38aef0;
+    width: 100px;
+    height: 30px;
+    border-radius: 50px;
+    padding: 5px;
+    margin-left: 10px;
+    text-align: center;
+    box-shadow: 0 0 8px gray;
+  }
